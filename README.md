@@ -4,6 +4,7 @@ jqueryClass
 A Simple, Powerful, Lightweight Class for jQuery
 
 The plugin to use OOP with jQuery.
+Credits go to author, Sam Stephenson.
 Based on [John Resig’s Simple Class](http://ejohn.org/blog/simple-javascript-inheritance/)
 
 * [jsperf report](http://jsperf.com/class-inherit-method-call/2)
