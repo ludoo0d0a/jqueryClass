@@ -1,3 +1,5 @@
+/* jshint undef: false, unused: false */
+
 (function( $ ) {
 	// Several of the methods in this plugin use code adapated from Prototype
 	//  Prototype JavaScript framework, version 1.6.0.1
@@ -26,13 +28,12 @@
 				current,
 				ret, 
 				i,
-				c = 0,
-				type;
+				c = 0;
 			
-			if(length == 0){
+			if(length === 0){
 				return currents[0];
 			}
-			while(current = currents[c++]){
+			while((current = currents[c++])){
 				for (i =0; i < length - 1 && isContainer(current); i++ ) {
 					current = getNext(current, parts[i], add);
 				}
@@ -177,7 +178,7 @@
 		// oldProps - where the old properties might be
 		// addTo - what we are adding to
 		inheritProps = function( newProps, oldProps, addTo ) {
-			addTo = addTo || newProps
+			addTo = addTo || newProps;
 			for ( var name in newProps ) {
 				// Check if we're overwriting an existing function
 				addTo[name] = isFunction(newProps[name]) && 
@@ -542,11 +543,11 @@
 					}
 					cur = (isString ? self[func] : func).apply(self, cur || []);
 					if ( f < length - 1 ) {
-						cur = !isArray(cur) || cur._use_call ? [cur] : cur
+						cur = !isArray(cur) || cur._use_call ? [cur] : cur;
 					}
 				}
 				return cur;
-			}
+			};
 		},
 		/**
 		 *   @function getObject 
@@ -668,9 +669,9 @@
 				if ( initializing ) return;
 
 				if ( this.constructor !== Class && arguments.length ) { //we are being called w/o new
-					return arguments.callee.extend.apply(arguments.callee, arguments)
+					return arguments.callee.extend.apply(arguments.callee, arguments);
 				} else { //we are being called w/ new
-					return this.Class.newInstance.apply(this.Class, arguments)
+					return this.Class.newInstance.apply(this.Class, arguments);
 				}
 			}
 			// Copy old stuff onto class
@@ -687,11 +688,10 @@
 			if ( fullName ) {
 
 				var parts = fullName.split(/\./),
-					shortName = parts.pop(),
-					current = clss.getObject(parts.join('.'), window, true),
-					namespace = current;
+					current = clss.getObject(parts.join('.'), window, true);
+				namespace = current;
+				shortName = parts.pop();
 
-				
 				current[shortName] = Class;
 			}
 
@@ -813,10 +813,7 @@
 			 */
 		}
 
-	})
-
-
-
+	});
 
 
 	clss.prototype.
@@ -833,4 +830,4 @@
 	callback = clss.callback;
 
 
-})(jQuery)
+})(jQuery);
